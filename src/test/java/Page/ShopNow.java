@@ -8,6 +8,7 @@ public class ShopNow {
     String shopNowButton = "a.btn-primary.glow-red";
     String sort = "select.input.cursor-pointer";
 
+
     public ShopNow(Page page){
         this.page = page;
     }
