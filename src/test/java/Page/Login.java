@@ -5,10 +5,7 @@ import com.microsoft.playwright.Page;
 
 import java.util.regex.Pattern;
 
-/**
- * Page object for the ThinkAndGetIt login page (/login).
- * Reached from any page via the header "Sign in" button.
- */
+
 public class Login {
     Page page;
 
@@ -42,10 +39,7 @@ public class Login {
         page.click(signInButton);
     }
 
-    /**
-     * Opens the login page, submits valid credentials, and waits for the
-     * post-login redirect to the home page.
-     */
+
     public void login(String email, String password) {
         openLoginPage();
         enterEmail(email);
@@ -67,7 +61,7 @@ public class Login {
         page.click(registerLink);
     }
 
-    /** The header account menu — visible only when a user is signed in. */
+
     public Locator getAccountMenu() {
         return page.locator(accountMenu);
     }
