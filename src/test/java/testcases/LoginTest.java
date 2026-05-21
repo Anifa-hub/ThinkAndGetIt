@@ -10,8 +10,10 @@ import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertTha
 
 public class LoginTest extends BaseTest {
 
-    private static final String EMAIL = "admin@thinkandgetit.com";
-    private static final String PASSWORD = "Admin@123456";
+    @Override
+    protected boolean autoLogin() {
+        return false;
+    }
 
     @Test
     public void testValidLogin() {
