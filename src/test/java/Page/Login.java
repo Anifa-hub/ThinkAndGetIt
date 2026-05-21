@@ -13,7 +13,7 @@ public class Login {
         this.page = page;
     }
 
-    String signInNavButton = "header a[href='/login']";
+    String loginUrl = "https://think-and-get-it-frontend.onrender.com/login";
     String emailInput = "input[type='email']";
     String passwordInput = "input[type='password']";
     String signInButton = "button[type='submit']";
@@ -23,7 +23,7 @@ public class Login {
     String accountMenu = "header div.relative.group";
 
     public void openLoginPage() {
-        page.click(signInNavButton);
+        page.navigate(loginUrl, new Page.NavigateOptions().setTimeout(60000));
         page.locator(emailInput).waitFor();
     }
 
@@ -38,7 +38,6 @@ public class Login {
     public void clickSignIn() {
         page.click(signInButton);
     }
-
 
     public void login(String email, String password) {
         openLoginPage();
@@ -60,8 +59,6 @@ public class Login {
     public void clickRegisterLink() {
         page.click(registerLink);
     }
-
-
     public Locator getAccountMenu() {
         return page.locator(accountMenu);
     }
