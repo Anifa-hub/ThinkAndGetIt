@@ -10,11 +10,10 @@ public class LogoutTest extends BaseTest {
 
     @Test
     public void testLogout() {
-        // BaseTest already signed us in — just sign out.
+
         Logout logout = new Logout(page);
         logout.logout();
 
-        // signing out brings back the "Sign in" button
         assertThat(logout.getSignInButton()).isVisible();
     }
 }
